@@ -5,4 +5,5 @@
 <p>Implemented</p>
 <ul>
     <li>Singlely LinkedList</li>
+    <li>Stack(Work in Progress)</li>
 </ul>
