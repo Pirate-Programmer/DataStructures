@@ -9,7 +9,7 @@
     }
     stack->top = -1;
     stack->capacity = capacity;
-    int* array = (int* )malloc(capacity*(sizeof(Stack)));
+    Objects* array = (Objects* )malloc(capacity*(sizeof(Stack)));
     if(array == NULL)
     {
         return NULL;
@@ -27,36 +27,82 @@ bool isEmpty(Stack* stack)
     return false;
 }
 
-Stack* resize_stack(Stack* stack)
+bool resize_stack(Stack* stack)
 {
     //allocate the double the memory
     //call realloc to handle the shifting and memory allocation
-    int* new_objects_ptr = realloc(stack->objects,stack->capacity*2); 
+    Objects* new_objects_ptr = (Objects* )realloc(stack->objects,stack->capacity*2); 
     if(new_objects_ptr == NULL)
     {
         printf("Realloc operation failed\n");
-        return stack;
+        return false;
     }
+    
     stack->capacity *= 2;
     stack->objects = new_objects_ptr;
+   // printf("Resize new capacity: %i \n",stack->capacity);
+    return true;
 }
 
 //to push element
 //inc top of stack
 //add the object
-int push(Stack* stack, int object)
+bool push(Stack* stack, int object)
 {
-    Stack* temp = NULL;
+    /*
+    example:
+    capacity: 10
+    top: 8 ie the 9th object
+    no resize
+
+    after push ie the 10th element
+    before push : top = 8 and capacity - 1 = 9
+    after push : top: 9 and capacity - 1 = 9 ie now all 10 objects are filled
+    on next push call resize before pushing the object on top of stack
+    */
     if(stack->top == stack->capacity-1) //stack is full
     {
-        temp = resize_stack(stack);
-        if(temp == stack)
+        if(!resize_stack(stack))
         {
-            return 1;
+            freeStack(stack);
+            return false;
         }
-        stack = temp;
     }
-      stack->top++;
+    stack->top++;
     *(stack->objects + stack->top) = object;
-      return 0;
+
+      return true;
+}
+
+//to pop element
+// value =  *(objects + top)
+//dec top of stack
+//return value
+
+//If Int min is the smallest negative value int can store
+//is this is returned ie stact is empty
+Objects pop(Stack* stack)
+{
+    if(isEmpty(stack))
+    {
+        return INT_MIN;
+    }
+    Objects value = *(stack->objects + stack->top);
+    stack->top--;
+    return value;
+}
+
+void freeStack(Stack* stack)
+{
+    free(stack->objects);
+    free(stack);
+}
+
+//int min returned ie stack is empty
+Objects peek(Stack* stack)
+{
+    if(isEmpty(stack)){
+        return INT_MIN;
+    }
+    return *(stack->objects+stack->top); 
 }
