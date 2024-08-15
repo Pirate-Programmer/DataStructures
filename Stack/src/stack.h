@@ -1,11 +1,12 @@
 #ifndef STACK_H
 #define STACK_H
 
+#include<Limits.h>
 #include<stdio.h>
 #include<stdlib.h>
 #include<ctype.h>
 #include<stdbool.h>
-#include<limits.h>
+
 
 typedef int Objects;
 
@@ -34,7 +35,7 @@ typedef struct
 bool resize_stack(Stack* stack);
 
 //push element on top of stack
-bool push(Stack* stack,int object);
+bool push(Stack* stack,Objects object);
 
 //pop element from top of stack
 Objects pop(Stack* stack);

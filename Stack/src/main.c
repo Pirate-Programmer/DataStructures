@@ -3,10 +3,6 @@
 #define Error 404;
 
 
-
-
-
-
 int main(int argc, char* argv[])
 {
     
