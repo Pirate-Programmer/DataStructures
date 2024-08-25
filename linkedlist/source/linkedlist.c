@@ -28,7 +28,7 @@ int main(int argv, char *argc[])
         list = temp;
     }
 
-  // bubblesort(list);
+   bubblesort(list);
    
 //postpending
     // for(int i = 1; i < argv; i++)
