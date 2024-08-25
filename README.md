@@ -13,7 +13,9 @@
 <p>To Compile Programs and Test Them</p>
 <ul>
     <li>
-        compile -> <code>make linkedlist</code><br>
-        run  ->  <code>make run</code>
+        <ol>
+        <li>compile -> <code>make linkedlist</code></li>
+        <li>run  ->  <code>make run</code></li>
+        </ol>
     </li>
 </ul>
