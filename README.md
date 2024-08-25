@@ -12,8 +12,8 @@
 
 <p>To Compile Programs and Test Them</p>
 <ul>
-    <li><pre>
+    <li>
         compile -> make linkedlist
         run    ->  make run
-     </pre></li>
+    </li>
 </ul>
