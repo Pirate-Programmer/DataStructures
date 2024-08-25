@@ -8,7 +8,7 @@ Queue* intialize_queue(unsigned int capacity)
         return NULL;
 
     queue->queue = (Objects* )malloc(sizeof(Objects)*capacity);
-    if(queue == NULL)
+    if(queue->queue == NULL)
     {
         free(queue);
         return NULL;
@@ -34,7 +34,6 @@ bool isEmpty(Queue* queue)
 //when rear ptr == capacity of the queue(array)
 bool isFull(Queue* queue)
 {
-
     return (queue->rear == queue->capacity - 1) && (queue->front <= queue->rear);
 }
 
