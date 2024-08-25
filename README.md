@@ -10,12 +10,4 @@
     <li>Circular Queue</li>
 </ul>
 
-<p>To Compile Programs and Test Them</p>
-<ul>
-    <li>
-     <pre>
-     compile -> <code>make linkedlist</code>
-     run -> <code>make run</code>
-    </pre>
-    </li>
-</ul>
+<p>**Note all Folders have <b>makefile</b> to compile and run the programs of resp folder</p>
