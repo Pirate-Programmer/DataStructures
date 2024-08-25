@@ -13,9 +13,7 @@
 <p>To Compile Programs and Test Them</p>
 <ul>
     <li>
-        <ol>
         <li>compile -> <code>make linkedlist</code></li>
         <li>run  ->  <code>make run</code></li>
-        </ol>
     </li>
 </ul>
