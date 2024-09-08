@@ -76,7 +76,7 @@ Objects peek_front(CQueue* queue)
 {
     if(queue == NULL || isEmpty(queue))
         return '\0';
-    return queue->queue[queue->rear];
+    return queue->queue[queue->front];
 }
 
 Objects peek_rear(CQueue* queue)
