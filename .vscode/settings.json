@@ -2,6 +2,10 @@
     "files.associations": {
         "vector": "c",
         "stdlib.h": "c",
-        "dll.h": "c"
+        "dll.h": "c",
+        "stdbool.h": "c",
+        "stdio.h": "c",
+        "ctype.h": "c",
+        "cll.h": "c"
     }
 }
