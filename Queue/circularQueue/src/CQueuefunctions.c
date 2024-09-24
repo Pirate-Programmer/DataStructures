@@ -18,7 +18,12 @@ CQueue* intialize_CQueue(unsigned int capacity)
     queue->rear = -1;
 }
 
-
+//Unlike linear queue in circular queue front can be ahead of rear
+//this case cannot be considered as rear can wrap behind front
+//Ex front = 2 and Rear = 4 and Size is 4 then after two enqueue operation rear would be 1(one behind front) but its NOT empty rather FULL.
+//to handle the case when front passes rear
+//we check if last element is present before dequeue operation
+//and reset front = -1 and rear = -1 after dequeue operation
 bool isEmpty(CQueue* queue)
 {
     return queue->front == -1;
