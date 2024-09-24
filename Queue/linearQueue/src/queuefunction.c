@@ -32,6 +32,10 @@ bool isEmpty(Queue* queue)
 
 //queue is full
 //when rear ptr == capacity of the queue(array)
+//when rear ptr == capacity - 1 then queue is full BUT    
+//at the same time if queue->front > queue->rear ie the queue is Empty as well
+//then return false
+//Reason: as isEmpty will reset front to 0 and rear to -1 in enqueue operation so no overflow is possible
 bool isFull(Queue* queue)
 {
     return (queue->rear == queue->capacity - 1) && (queue->front <= queue->rear);
