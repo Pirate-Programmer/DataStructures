@@ -4,6 +4,8 @@
 
 <p>Implemented</p>
 <ul>
+    <li>Circular LinkedList</li>
+    <li>Doublely LinkedList</li>
     <li>Singlely LinkedList</li>
     <li>Stack</li>
     <li>Linear Queue</li>
